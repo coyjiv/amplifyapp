@@ -47,5 +47,12 @@
         }
       }
     }
+  },
+  "storage": {
+    "s3amplifyappstorage37ab71f5": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }
