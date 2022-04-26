@@ -7,8 +7,6 @@ import {
   createTodo as createNoteMutation,
   deleteTodo as deleteNoteMutation,
 } from "./graphql/mutations";
-import { DataStore } from "@aws-amplify/datastore";
-import { Todo } from "./models";
 
 const initialFormState = { name: "", description: "" };
 
@@ -19,14 +17,6 @@ function App() {
   useEffect(() => {
     fetchNotes();
   }, []);
-
-  (async () =>
-    await DataStore.save(
-      new Todo({
-        name: "Lorem ipsum dolor sit amet",
-        description: "Lorem ipsum dolor sit amet",
-      })
-    ))();
   async function fetchNotes() {
     const apiData = await API.graphql({ query: listTodos });
     setNotes(apiData.data.listNotes.items);
