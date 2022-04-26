@@ -14,11 +14,13 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
-    "emailVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Danila's TODOs",
+    "emailVerificationMessage": "Hi, buddy, here is your verification code : {####}",
     "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [],
+    "passwordPolicyMinLength": 6,
+    "passwordPolicyCharacters": [
+      "Requires Numbers"
+    ],
     "requiredAttributes": [
       "email"
     ],
@@ -55,6 +57,12 @@
     "adminQueries": false,
     "thirdPartyAuth": false,
     "authProviders": [],
-    "hostedUI": false
+    "hostedUI": true,
+    "hostedUIDomainName": "4w4j6mih40m1",
+    "authProvidersUserPool": [
+      "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://main.d2sg9xyzp3kv9b.amplifyapp.com\"],\"LogoutURLs\":[\"https://main.d2sg9xyzp3kv9b.amplifyapp.com\"]}"
   }
 }

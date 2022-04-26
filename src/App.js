@@ -45,12 +45,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>DANILA TODO</h1>
+      <h1 style={{ color: "white" }}>DANILA TODO</h1>
       <Stack spacing={2} sx={{ width: "40%", margin: "0px auto" }}>
         <TextField
           id="outlined-basic"
           label="Note name"
           variant="outlined"
+          color="secondary"
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           value={formData.name}
         />
@@ -60,6 +61,7 @@ function App() {
           variant="outlined"
           multiline={true}
           rows={3}
+          color="secondary"
           onChange={(e) =>
             setFormData({ ...formData, description: e.target.value })
           }
@@ -94,9 +96,15 @@ function App() {
           <h1>You need to create a to-do first!</h1>
         )}
       </div>
-      <AmplifySignOut />
+      <div style={{ width: "35%", margin: "0 auto", marginBottom: "50px" }}>
+        <AmplifySignOut />
+      </div>
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, {
+  signUpConfig: {
+    hiddenDefaults: ["phone_number"],
+  },
+});
